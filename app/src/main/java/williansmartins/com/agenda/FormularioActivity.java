@@ -1,5 +1,6 @@
 package williansmartins.com.agenda;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class FormularioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(FormularioActivity.this, "clicou:" + R.id.formulario_nome, Toast.LENGTH_LONG).show();
+                finish();
             }
         });
     }
