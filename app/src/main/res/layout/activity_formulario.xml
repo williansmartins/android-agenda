@@ -24,7 +24,7 @@
         <EditText android:hint="Telefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/telefone"/>
+            android:id="@+id/formulario_telefone"/>
 
         <EditText android:hint="Site"
             android:layout_width="match_parent"
