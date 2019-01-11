@@ -10,12 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import williansmartins.com.agenda.dao.AlunoDAO;
 import williansmartins.com.agenda.helper.FormularioHelper;
 import williansmartins.com.agenda.modelo.Aluno;
 
 public class FormularioActivity extends AppCompatActivity {
 
     FormularioHelper helper;
+    AlunoDAO dao = new AlunoDAO(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,11 @@ public class FormularioActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_formulario_ok){
             Aluno aluno = helper.pegaAluno();
-            Toast.makeText(FormularioActivity.this, "Aluno salvo!" + aluno, Toast.LENGTH_LONG).show();
 
+            Long id = dao.insere(aluno);
+            dao.close();
+
+            Toast.makeText(FormularioActivity.this, "Aluno salvo! Id: " + id, Toast.LENGTH_LONG).show();
 
             finish();
         }
